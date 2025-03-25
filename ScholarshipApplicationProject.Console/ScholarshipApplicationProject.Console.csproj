@@ -13,5 +13,8 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.12" />
 
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Leiras\" />
+	</ItemGroup>
 
 </Project>

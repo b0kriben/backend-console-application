@@ -31,6 +31,13 @@ odon.Win(20000);
 odon.Win(30000);
 Console.WriteLine(odon);
 
+
 ScholarshipRepo repo = new();
 
-Console.WriteLine($"Ösztöndíjasok száma: {repo.GetNumberOfScholarship()}");
+/*Console.WriteLine("5. feladat");
+Console.WriteLine($"Ösztöndíjasok száma: {repo.GetNumberOfScholarship()}");*/
+
+
+Console.WriteLine("1. feladat");
+Console.WriteLine($"{repo.ListAllScholarships()}");
+
