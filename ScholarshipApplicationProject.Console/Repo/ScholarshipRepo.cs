@@ -19,22 +19,13 @@ namespace ScholarshipApplicationProject.Console.Repo
         }
 
         //1. feladat: Az összes ösztöndíjas listázása
-        /*public string ListAllScholarships()
-        {
-            var applicants = _context.Scholarships.ToList();
-            foreach (var applicant in applicants)
-            {
-                return ($"{applicant.Name} ({applicant.Email}) {applicant.Amount} Ft");
-            }
-            return "Nincs adat az adatbázisban.";
-        }*/
         public string ListAllScholarships()
         {
             var applicants = _context.Scholarships.ToList();
-            if (applicants.Count == 0)
+            /*if (applicants.Count == 0)
             {
                 return "Nincs adat az adatbázisban.";
-            }
+            }*/
 
             string result = "";
             foreach (var applicant in applicants)
@@ -52,11 +43,6 @@ namespace ScholarshipApplicationProject.Console.Repo
                 .Where(s => s.Amount > minimumAmount)
                 .ToList();
 
-            if (applicants.Count == 0)
-            {
-                return "Nincs adat az adatbázisban.";
-            }
-
             string result = "";
             foreach (var applicant in applicants)
             {
@@ -73,11 +59,6 @@ namespace ScholarshipApplicationProject.Console.Repo
             var applicants = _context.Scholarships
                 .OrderByDescending(s => s.Amount)
                 .ToList();
-
-            if (applicants.Count == 0)
-            {
-                return "Nincs adat az adatbázisban.";
-            }
 
             string result = "";
             foreach (var applicant in applicants)
@@ -164,11 +145,6 @@ namespace ScholarshipApplicationProject.Console.Repo
                 .Where(s => s.Amount >= 1800 && s.Email.Contains("example.com"))
                 .ToList();
 
-            if (applicants.Count == 0)
-            {
-                return "Nincs adat az adatbázisban.";
-            }
-
             string result = "";
             foreach (var applicant in applicants)
             {
@@ -184,11 +160,6 @@ namespace ScholarshipApplicationProject.Console.Repo
             var applicants = _context.Scholarships
                 .Where(s => s.Amount > 2000 || s.Email == "alice@example.com")
                 .ToList();
-
-            if (applicants.Count == 0)
-            {
-                return "Nincs adat az adatbázisban.";
-            }
 
             string result = "";
             foreach (var applicant in applicants)
